@@ -1,7 +1,7 @@
 // server.js file should require the basic npm packages we've used in class: express and path
 
 // Dependencies
-var expresss = require ("express");
+var express = require ("express");
 var bodyParser = require ("body-parser");
 var path = require ("path");
 
