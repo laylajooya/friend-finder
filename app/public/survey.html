@@ -148,7 +148,7 @@
                     </div>
                     <div class="modal-body">
                         <h3 class="friendName"></h3>
-                        <img id="friendPhoto" src="#">
+                        <img id="friendPhoto" src="#" style="width:200px; height:200px;">
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
@@ -159,8 +159,8 @@
         </div>
     </div>
 
-    <footer>
-        <div class="container">
+    <footer class="page-footer font-small fixed-bottom">
+        <div class="footer-copyright text-center py-3">
             <a href="/api/friends">Friend API</a>
             <span>|</span>
             <a href="https://github.com/laylajooya/friend-finder">GitHub</a>
@@ -203,7 +203,7 @@
                 var currentURl = window.location.origin;
 
                 $.post(currentURl + "/api/friends", newFriend, function(data){
-                    $("#friendName").text(data.name);
+                    $(".friendName").text(data.name);
                     $("#friendPhoto").attr("src", data.photo);
                     $("#friendModal").modal("toggle");
                 });
