@@ -183,10 +183,34 @@
                 valid = false;
             }
             
-            if(valid === true){
-                var 
+            if(valid === true) {
+                var newFriend = {
+                    name: $("#name").val().trim(),
+                    photo: $("#photo").val().trim(),
+                    scores: [
+                        $("#question1").val(),
+					    $("#question2").val(),
+					    $("#question3").val(),
+					    $("#question4").val(),
+					    $("#question5").val(),
+					    $("#question6").val(),
+					    $("#question7").val(),
+					    $("#question8").val(),
+					    $("#question9").val(),
+					    $("#question10").val()
+                    ]
+                };
+                var currentURl = window.location.origin;
+
+                $.post(currentURl + "/api/friends", newFriend, function(data){
+                    $("#bestFriend").text(data.name);
+                    $("#bestFriendPhoto").attr("src", data.photo);
+                    $("#friendModal").modal("toggle");
+                });
+            } else {
+                alert("Survey is incomplete!");
             }
-        }
+        });
     </script>
 </body>
 </html>
